@@ -1,0 +1,512 @@
+citr:::insert_citation()
+citr:::insert_citation()
+citr:::insert_citation()
+citr:::insert_citation()
+ggplot(dd_rand) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD, ymax = mean_ext + SD, fill = type), alpha = 0.5) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+library(ggplot2)
+ggplot(dd_rand) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD, ymax = mean_ext + SD, fill = type), alpha = 0.5) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+ggplot(dd) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand <- ggplot(dd_rand) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD, ymax = mean_ext + SD, fill = type), alpha = 0.5) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+ggsave(plot = plot_dd_rand, filename = "results/Benguela_Pelagic_ext_random.png")
+citr:::insert_citation()
+citr:::insert_citation()
+rm(list = ls())
+library(R.utils)
+sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
+fw_name <- "Benguela Pelagic"
+fw_tol <- 0.6
+real_fw <- readRDS(paste("../C1_method/data_new/", fw_name, ".web.Rdata", sep = ""))
+real_pred_mat <- real_fw$predation.matrix
+ADBM_fw_all <- readRDS(paste0("../C1_method/results/rejection/", fw_name, "/rN=1000_tol=", fw_tol, "_TSS_lower_a/", fw_name, ".Rdata"))
+sel_ind <- which.min(ADBM_fw_all$dist)
+ADBM_fw_par <- ADBM_fw_all$post_dists[sel_ind,]
+## Generating the ADBM predicted food web
+fw_data <- real_fw
+n_species <- length(fw_data$species.sizes)
+M <- fw_data$species.sizes
+M <- sort(M)
+sim_a <- 10^ADBM_fw_par$a
+sim_ai <- ADBM_fw_par$ai
+sim_aj <- ADBM_fw_par$aj
+sim_r.b <- 10^ADBM_fw_par$r.b
+local_par <- data.frame(a = sim_a, ai = sim_ai, aj = sim_aj, r.b = sim_r.b)
+sim_model_core_par <- list(e = 1, n = 1, ni = -3/4, r.a = 1, M  = M)
+pred_mat <- ratio.power(opt=local_par, x = sim_model_core_par)
+rownames(pred_mat) <- as.character(seq(1, n_species))
+colnames(pred_mat) <- as.character(seq(1, n_species))
+ADBM_pred_mat <- pred_mat
+real_conn <- sum(real_pred_mat)/(dim(real_pred_mat)[1]^2)
+ADBM_conn <- sum(ADBM_pred_mat)/(dim(ADBM_pred_mat)[1]^2)
+library(NetworkExtinction)
+library(network)
+real_net <- as.network(real_pred_mat, loops = TRUE)
+ADBM_net <- as.network(ADBM_pred_mat, loops = TRUE)
+real_net
+ADBM_net <- as.network(ADBM_pred_mat, loops = TRUE)
+real_ext_rand <- RandomExtinctions(Network = real_net, nsim = 1000)
+ADBM_ext_rand <- RandomExtinctions(Network = ADBM_net, nsim = 1000)
+ADBM_pred_mat <- pred_mat
+real_conn <- sum(real_pred_mat)/(dim(real_pred_mat)[1]^2)
+ADBM_conn <- sum(ADBM_pred_mat)/(dim(ADBM_pred_mat)[1]^2)
+real_net <- as.network(real_pred_mat, loops = TRUE)
+ADBM_net <- as.network(ADBM_pred_mat, loops = TRUE)
+real_ext_mc <- Mostconnected(Network = real_net)
+ADBM_ext_mc <- Mostconnected(Network = ADBM_net)
+real_ext_rand <- RandomExtinctions(Network = real_net, nsim = 10)
+ADBM_ext_rand <- RandomExtinctions(Network = ADBM_net, nsim = 10)
+real_ext$AccSecondaryExtinction
+real_ext_rand$sims$AccSecondaryExtinction
+# For removing most connected nodes
+dd_mc <- data.frame(sec_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+# For removing random nodes
+dd_rand <- data.frame(sec_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+dd_mc <- rbind(data.frame(sec_ext = real_ext_mc$AccSecondaryExtinction,
+n_ext = real_ext_mc$NumExt,
+type = "Empirical",
+fw_name = fw_name,
+dd_mc)
+}
+dd_mc <- rbind(data.frame(sec_ext = real_ext_mc$AccSecondaryExtinction,
+n_ext = real_ext_mc$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+dd_mc)
+dd_mc
+ADBM_ext_mc$AccSecondaryExtinction
+dd_rand <- rbind(data.frame(mean_ext = real_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = real_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = real_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+rbind(data.frame(mean_ext = ADBM_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = ADBM_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = ADBM_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+dd_rand)
+dd_rand <- rbind(data.frame(mean_ext = real_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = real_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = real_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+data.frame(mean_ext = ADBM_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = ADBM_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = ADBM_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+dd_rand)
+library(readxl)
+check_TSS_a <- read_excel("~/Google Drive/GitHub/C1_method/results/check/check_TSS_a.xlsx")
+View(check_TSS_a)
+# Getting the foodweb name and tolerance
+metadata_fw_tol <- read_excel("~/Google Drive/GitHub/C1_method/results/check/check_TSS_a.xlsx")
+metadata_fw_tol
+dim(metadata_fw_tol)
+dim(metadata_fw_tol)[1]
+metadata_fw_tol$foodweb[i]
+i <- 1
+metadata_fw_tol$foodweb[i]
+metadata_fw_tol$dist_r[i]
+library(R.utils)
+library(NetworkExtinction)
+library(network)
+sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
+# For removing most connected nodes
+dd_mc <- data.frame(sec_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+# For removing random nodes
+dd_rand <- data.frame(mean_ext = double(),
+SD_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+ext_vs_n <- function(fw_name, fw_tol){
+real_fw <- readRDS(paste("../C1_method/data_new/", fw_name, ".web.Rdata", sep = ""))
+real_pred_mat <- real_fw$predation.matrix
+ADBM_fw_all <- readRDS(paste0("../C1_method/results/rejection/", fw_name, "/rN=1000_tol=", fw_tol, "_TSS_lower_a/", fw_name, ".Rdata"))
+sel_ind <- which.min(ADBM_fw_all$dist)
+ADBM_fw_par <- ADBM_fw_all$post_dists[sel_ind,]
+## Generating the ADBM predicted food web
+fw_data <- real_fw
+n_species <- length(fw_data$species.sizes)
+M <- fw_data$species.sizes
+M <- sort(M)
+sim_a <- 10^ADBM_fw_par$a
+sim_ai <- ADBM_fw_par$ai
+sim_aj <- ADBM_fw_par$aj
+sim_r.b <- 10^ADBM_fw_par$r.b
+local_par <- data.frame(a = sim_a, ai = sim_ai, aj = sim_aj, r.b = sim_r.b)
+sim_model_core_par <- list(e = 1, n = 1, ni = -3/4, r.a = 1, M  = M)
+pred_mat <- ratio.power(opt=local_par, x = sim_model_core_par)
+rownames(pred_mat) <- as.character(seq(1, n_species))
+colnames(pred_mat) <- as.character(seq(1, n_species))
+ADBM_pred_mat <- pred_mat
+return(list(real_pred_mat = real_pred_mat,
+ADBM_pred_mat = ADBM_pred_mat))
+}
+fw_func <- ext_vs_n(fw_name = fw_name, fw_tol = fw_tol)
+fw_func
+fw_func
+fw_func_calc <- ext_vs_n(fw_name = fw_name, fw_tol = fw_tol)
+ADBM_pred_mat
+# 24.09.2021
+# We put the script of overestimation.R in function
+library(R.utils)
+library(NetworkExtinction)
+library(network)
+sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
+# For removing most connected nodes
+dd_mc <- data.frame(sec_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+# For removing random nodes
+dd_rand <- data.frame(mean_ext = double(),
+SD_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+ext_vs_n <- function(fw_name, fw_tol){
+real_fw <- readRDS(paste("../C1_method/data_new/", fw_name, ".web.Rdata", sep = ""))
+real_pred_mat <- real_fw$predation.matrix
+ADBM_fw_all <- readRDS(paste0("../C1_method/results/rejection/", fw_name, "/rN=1000_tol=", fw_tol, "_TSS_lower_a/", fw_name, ".Rdata"))
+sel_ind <- which.min(ADBM_fw_all$dist)
+ADBM_fw_par <- ADBM_fw_all$post_dists[sel_ind,]
+## Generating the ADBM predicted food web
+fw_data <- real_fw
+n_species <- length(fw_data$species.sizes)
+M <- fw_data$species.sizes
+M <- sort(M)
+sim_a <- 10^ADBM_fw_par$a
+sim_ai <- ADBM_fw_par$ai
+sim_aj <- ADBM_fw_par$aj
+sim_r.b <- 10^ADBM_fw_par$r.b
+local_par <- data.frame(a = sim_a, ai = sim_ai, aj = sim_aj, r.b = sim_r.b)
+sim_model_core_par <- list(e = 1, n = 1, ni = -3/4, r.a = 1, M  = M)
+pred_mat <- ratio.power(opt=local_par, x = sim_model_core_par)
+rownames(pred_mat) <- as.character(seq(1, n_species))
+colnames(pred_mat) <- as.character(seq(1, n_species))
+ADBM_pred_mat <- pred_mat
+return(list(real_pred_mat = real_pred_mat,
+ADBM_pred_mat = ADBM_pred_mat))
+}
+# Getting the foodweb name and tolerance
+metadata_fw_tol <- read_excel("~/Google Drive/GitHub/C1_method/results/check/check_TSS_a.xlsx")
+n_fw <- dim(metadata_fw_tol)[1]
+for(i in 1:n_fw){
+fw_name <- metadata_fw_tol$foodweb[i]
+fw_tol <- metadata_fw_tol$dist_r[i]
+fw_func_calc <- ext_vs_n(fw_name = fw_name, fw_tol = fw_tol)
+real_pred_mat <- fw_func_calc$real_pred_mat
+ADBM_pred_mat <- fw_func_calc$ADBM_pred_mat
+real_conn <- sum(real_pred_mat)/(dim(real_pred_mat)[1]^2)
+ADBM_conn <- sum(ADBM_pred_mat)/(dim(ADBM_pred_mat)[1]^2)
+real_net <- as.network(real_pred_mat, loops = TRUE)
+ADBM_net <- as.network(ADBM_pred_mat, loops = TRUE)
+real_ext_mc <- Mostconnected(Network = real_net)
+ADBM_ext_mc <- Mostconnected(Network = ADBM_net)
+real_ext_rand <- RandomExtinctions(Network = real_net, nsim = 10)
+ADBM_ext_rand <- RandomExtinctions(Network = ADBM_net, nsim = 10)
+dd_mc <- rbind(data.frame(sec_ext = real_ext_mc$AccSecondaryExtinction,
+n_ext = real_ext_mc$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+data.frame(sec_ext = ADBM_ext_mc$AccSecondaryExtinction,
+n_ext = ADBM_ext_mc$NumExt,
+type = "ADBM",
+fw_name = fw_name),
+dd_mc)
+dd_rand <- rbind(data.frame(mean_ext = real_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = real_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = real_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+data.frame(mean_ext = ADBM_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = ADBM_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = ADBM_ext_rand$sims$NumExt,
+type = "ADBM",
+fw_name = fw_name),
+dd_rand)
+}
+dd_rand
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+library(ggplot2)
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = free) +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD_ext, ymax = mean_ext + SD, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD_ext, ymax = mean_ext + SD_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+# 24.09.2021
+# We put the script of overestimation.R in function
+library(R.utils)
+library(NetworkExtinction)
+library(network)
+sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
+# For removing most connected nodes
+dd_mc <- data.frame(sec_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+# For removing random nodes
+dd_rand <- data.frame(mean_ext = double(),
+SD_ext = double(),
+n_ext = integer(),
+type = character(),
+fw_name = character())
+ext_vs_n <- function(fw_name, fw_tol){
+real_fw <- readRDS(paste("../C1_method/data_new/", fw_name, ".web.Rdata", sep = ""))
+real_pred_mat <- real_fw$predation.matrix
+ADBM_fw_all <- readRDS(paste0("../C1_method/results/rejection/", fw_name, "/rN=1000_tol=", fw_tol, "_TSS_lower_a/", fw_name, ".Rdata"))
+sel_ind <- which.min(ADBM_fw_all$dist)
+ADBM_fw_par <- ADBM_fw_all$post_dists[sel_ind,]
+## Generating the ADBM predicted food web
+fw_data <- real_fw
+n_species <- length(fw_data$species.sizes)
+M <- fw_data$species.sizes
+M <- sort(M)
+sim_a <- 10^ADBM_fw_par$a
+sim_ai <- ADBM_fw_par$ai
+sim_aj <- ADBM_fw_par$aj
+sim_r.b <- 10^ADBM_fw_par$r.b
+local_par <- data.frame(a = sim_a, ai = sim_ai, aj = sim_aj, r.b = sim_r.b)
+sim_model_core_par <- list(e = 1, n = 1, ni = -3/4, r.a = 1, M  = M)
+pred_mat <- ratio.power(opt=local_par, x = sim_model_core_par)
+rownames(pred_mat) <- as.character(seq(1, n_species))
+colnames(pred_mat) <- as.character(seq(1, n_species))
+ADBM_pred_mat <- pred_mat
+return(list(real_pred_mat = real_pred_mat,
+ADBM_pred_mat = ADBM_pred_mat))
+}
+# Getting the foodweb name and tolerance
+metadata_fw_tol <- read_excel("~/Google Drive/GitHub/C1_method/results/check/check_TSS_a.xlsx")
+n_fw <- dim(metadata_fw_tol)[1]
+for(i in 1:n_fw){
+fw_name <- metadata_fw_tol$foodweb[i]
+fw_tol <- metadata_fw_tol$dist_r[i]
+fw_func_calc <- ext_vs_n(fw_name = fw_name, fw_tol = fw_tol)
+real_pred_mat <- fw_func_calc$real_pred_mat
+ADBM_pred_mat <- fw_func_calc$ADBM_pred_mat
+real_conn <- sum(real_pred_mat)/(dim(real_pred_mat)[1]^2)
+ADBM_conn <- sum(ADBM_pred_mat)/(dim(ADBM_pred_mat)[1]^2)
+real_net <- as.network(real_pred_mat, loops = TRUE)
+ADBM_net <- as.network(ADBM_pred_mat, loops = TRUE)
+real_ext_mc <- Mostconnected(Network = real_net)
+ADBM_ext_mc <- Mostconnected(Network = ADBM_net)
+real_ext_rand <- RandomExtinctions(Network = real_net, nsim = 1000)
+ADBM_ext_rand <- RandomExtinctions(Network = ADBM_net, nsim = 1000)
+dd_mc <- rbind(data.frame(sec_ext = real_ext_mc$AccSecondaryExtinction,
+n_ext = real_ext_mc$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+data.frame(sec_ext = ADBM_ext_mc$AccSecondaryExtinction,
+n_ext = ADBM_ext_mc$NumExt,
+type = "ADBM",
+fw_name = fw_name),
+dd_mc)
+dd_rand <- rbind(data.frame(mean_ext = real_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = real_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = real_ext_rand$sims$NumExt,
+type = "Empirical",
+fw_name = fw_name),
+data.frame(mean_ext = ADBM_ext_rand$sims$AccSecondaryExtinction,
+SD_ext = ADBM_ext_rand$sims$SdAccSecondaryExtinction,
+n_ext = ADBM_ext_rand$sims$NumExt,
+type = "ADBM",
+fw_name = fw_name),
+dd_rand)
+}
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD_ext, ymax = mean_ext + SD_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_mc
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD_ext, ymax = mean_ext + SD_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+plot_dd_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext, ymax = mean_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+library(ggplot2)
+plot_dd_mc <- ggplot(dd_mc) +
+geom_point(aes(x = n_ext, y = sec_ext, color = type)) +
+geom_line(aes(x = n_ext, y = sec_ext, color = type)) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext, ymax = mean_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+library(boot)
+?boot
+real_ext_rand
+real_ext_rand$sims$AccSecondaryExtinction
+real_ext_rand$graph
+real_ext_rand
+real_ext_randRandomExtinctions(Network = real_net, nsim = 3)
+library(R.utils)
+library(NetworkExtinction)
+library(network)
+real_ext_randRandomExtinctions(Network = real_net, nsim = 3)
+RandomExtinctions(Network = real_net, nsim = 3)
+real_ext_rand
+ADBM_ext_ran
+ADBM_ext_rand
+dd_rand
+plot_dd_rand
+plot_dd_rand
+ADBM_ext_rand
+plot_dd_rand <- ggplot(dd_rand) +
+geom_point(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_line(aes(x = n_ext, y = mean_ext, color = type)) +
+geom_ribbon(aes(x = n_ext, ymin = mean_ext - SD_ext, ymax = mean_ext + SD_ext, fill = type), alpha = 0.5) +
+facet_wrap(~fw_name, scale = "free") +
+theme_bw() +
+xlab("Number of Extinctions") +
+ylab("Secondary extinctions")
+plot_dd_rand
+?RandomExtinctions
+RandomExtinctions
+RandomExtinctions(Network = real_net, nsim = 3, records = T)
+RandomExtinctions(Network = real_net, nsim = 3, record = T)
+RandomExtinctions(Network = ADBM_net, parallel = TRUE, ncores = 4, nsim = 8)
+install.packages(NetworkExtinction)
+install.packages("NetworkExtinction")
+install.packages("NetworkExtinction")
+install.packages("NetworkExtinction")

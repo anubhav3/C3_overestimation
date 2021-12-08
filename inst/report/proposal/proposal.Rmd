@@ -1,0 +1,38 @@
+---
+title: "Implication of overestimation of connectance predicted by the ADBM on the stability of food web"
+output: 
+  pdf_document:
+    number_sections: true
+    toc: yes
+    
+header-includes:
+  - \usepackage{setspace}\linespread{1.25}
+bibliography: references.bib
+---
+
+## Key points:
+
+-   Overestimation of connectance in food web model [@gravelInferringFoodWeb2013]
+-   Undersampling in food web
+-   Implications of above on food web stability
+-   Effect of intervality on the stability of food web
+
+## Preliminary work
+
+### Implication of overestimation of connectance in the ADBM
+
+#### Benguela Pelagic food web
+
+-   Removal of most connected node
+
+```{r, echo=FALSE, fig.align='center', out.width="500px", fig.cap="\\label{fig:fig_1} Most connected"}
+knitr::include_graphics("../../../results/plot_dd_mc.png")
+```
+
+-   Removal of random nodes
+
+```{r, echo=FALSE, fig.align='center', out.width="500px", fig.cap="\\label{fig:fig_2} Random extinctions"}
+knitr::include_graphics("../../../results/plot_dd_rand.png")
+```
+
+# References

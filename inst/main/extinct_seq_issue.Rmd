@@ -1,0 +1,27 @@
+---
+title: "Duplicate extinction"
+author: "Anubhav Gupta"
+date: "11/22/2021"
+output: pdf_document
+---
+```{r warning = FALSE, message = FALSE}
+
+library(NetworkExtinction)
+library(network)
+
+data("net")
+ch_data <- net
+
+net_sim <- SimulateExtinctions(Network = net, Order = c(3, 4, 7, 10, 1, 5, 8, 2, 6, 9), Method = "Ordered")
+
+net_sim
+
+plot.network(x = ch_data, label = network.vertex.names(ch_data))
+```
+
+It can be seen that the extinction of node 4 and node 3 results in secondary extinction of node 7. However, the function SimulateExtinctions does not check if node 7 is already extinct or not when it is asked for primary extinction of node 7 as can be seen from the result above. In the above case, node 7 is extinct twice: once in secondary extinction and next time in primary extinction. This eventually results in a total extinction of 13 nodes, however there are only 10 nodes in the network.
+
+```{r}
+sessionInfo()
+```
+
