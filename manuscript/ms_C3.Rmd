@@ -40,15 +40,17 @@ abstract: |
 
 # Introduction
 
-<!-- Paragraph: Anthropogenic changes and trophic cascading extinctions-->
+## Background on anthropogenic changes and its impact on food web
 
 Anthropogenic changes such as climate change and habitat destruction is a threat to biodiversity and can lead to food web collapse. Climate change can lead to the collapse of a food web [@ullah2018]. Primary extinctions in a food web can give rise to further secondary extinctions in a food web resulting in collapse of the food web. Depending upon the food web, removal of few species from a food web can result in the food web collapse.
 
 A loss of species in an ecosystem can lead to secondary extinction of species that feed on the species. The effect of these losses would depend upon the complexity of the food web.
 
+## Briefly explain papers by Jennifer Dunne
+
 Simulation study has been used to understand the robustness of food webs predicted using food web models [@dunneCascadingExtinctionsCommunity2009]. As food web models can be used to predicting interactions to understanding the mechanism behind interactions in a food web, it is important to know how robust these predicted food webs are.
 
-<!-- Paragraph: ADBM predicted food webs -->
+## ADBM predicted food webs
 
 The allometric diet breadth model (ADBM) was the first model able to predict food web connectance (i.e. the number of realised links divided by total number of possible links) and structure (i.e. the arrangement of those links). ADBM uses foraging theory specifically the contingency model [@macarthur1966] to predict the diet of each potential consumer and thereby the food web structure.
 
@@ -60,7 +62,7 @@ In Gupta et al. (2021), the connectance (number of realised links divided by the
 
 -   How diversity and complexity influence the susceptibility of communities to secondary extinctions
 
-<!-- Paragraph: Robustness of ADBM predicted food webs -->
+## Robustness of ADBM predicted food webs
 
 Theoretical studies have simulated primary extinctions to check the robustness of food webs [@dunneCascadingExtinctionsCommunity2009]. @dunne had shown that the robustness of a food web increases with connectance.
 
