@@ -148,7 +148,7 @@ The ADBM predicted food webs were more robust than the observed food web with so
 knitr::include_graphics("../results/plot_robustness_all_uncertainty.png")
 ```
 
-AG: I will also add robustness plot for random extinction. It takes more time to compute.
+AG: I will also update the robustness plot for random extinction (Fig. 4 (b)) once the simulation is completed. The one shown here is only for few simulations and as a placeholder. It takes more time to compute.
 
 # Discussion
 
@@ -189,14 +189,14 @@ AG: (Caution) Some of the texts might be very similar to or same as in C1 MS. Wi
 
 ## Compare the results from our study with results from other food web models (Jennifer A. Dunne and Williams (2009))
 
-The findings from our study is similar to what had been documented for other food web models [@dunneCascadingExtinctionsCommunity2009], in terms of increase in the robustness when the connectance of the food web is increased. A future study could be to understand the robustness of other food web models [@InferringFoodWeb] and compare it with our study. We expect similar results.
+The findings from our study is similar to what had been documented for other food web models [@dunneCascadingExtinctionsCommunity2009], in terms of increase in the robustness when the connectance of the food web is increased. A future study could be to understand the robustness of other food web models [@gravelInferringFoodWeb2013a] and compare it with our study. We expect similar results.
 
 [OP] Including if and why we expect our findings to be replicated with those other models. Include some of Gravel and Poissot's models
 
 ...
 
-Need to coordinate this content with what I proposed on line 141.
+<!-- Need to coordinate this content with what I proposed on line 141. -->
 
-Line 141 is "Include here the possibility that the increased connectance would influence dynamical stability, and state if and why this may increase or decrease stability."
+<!-- Line 141 is "Include here the possibility that the increased connectance would influence dynamical stability, and state if and why this may increase or decrease stability." -->
 
 # References
