@@ -15,8 +15,8 @@ authors:
 geometry: margin=1in
 abstract: |
 
-  1)  Undersampling of species in a food web can lead to missing trophic interactions in the food web. This can be compensated by using food web models such as allometric diet breadth model (ADBM) to predict those missing links. At the same time, these models might predict links which are probably not true i.e. false positives. So, it is cruicial to understand how this affects the stability of predicted food webs when compared with the observed food webs.
-  2)  In our study, we compare the number of secondary extinctions when there is a primary extinction of species in food webs predicted by the ADBM to that in the observed food webs, and compute the robustness across 12 different food webs from a wide variety of ecosystems.
+  1)  Undersampling of species in a food web can lead to missing trophic interactions in the food web which could be compensated by using food web models such as allometric diet breadth model (ADBM) to predict those missing links. However, these models might predict links which are probably not true i.e. false positives. So, it is cruicial to understand how this affects the stability of predicted food webs when compared with the observed food webs.
+  2)  In our study, we compare the number of secondary extinctions resulting from the  primary extinction of species in food webs predicted by the ADBM to that in the observed food webs, and compute the robustness across 12 different food webs from a wide variety of ecosystems.
   3)  We found that the ADBM predicted food webs were more robust than the observed food webs, and this can be attributed to connectance of the ADBM predicted food webs being higher than that of the observed food webs.
   4)  These results suggest that real food webs might be more robust as compared to the food webs constructed using observed data.
 keywords:
