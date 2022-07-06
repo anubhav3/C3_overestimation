@@ -9,7 +9,7 @@ most_connected_ext <- function(net){
   ext_list <- list()
   
   # Stop when all the species is extinct
-  while(all(is.na(new_net)) == FALSE ! sum(new_net) != 0){
+  while(all(is.na(new_net)) == FALSE){
     indeg <- rowSums(new_net)
     outdeg <- colSums(new_net)
     totdeg <- indeg + outdeg
@@ -24,8 +24,8 @@ most_connected_ext <- function(net){
       dd <- rbind(dd, 
                   data.frame(node = node, acc_pri_ext = k, n_sec_ext = ext_list[[k]][[2]],
                              acc_sec_ext = ext_list[[k]][[2]] + dd$acc_sec_ext[k-1])
-      )
-    } else {
+            )
+    }else{
       dd <- rbind(dd, 
                   data.frame(node = node, acc_pri_ext = k, n_sec_ext = ext_list[[k]][[2]],
                              acc_sec_ext = ext_list[[k]][[2]])
@@ -33,8 +33,9 @@ most_connected_ext <- function(net){
     }
     
     k <- k + 1
-    print(k)
-  }
+    # print(k)
+ 
+    }
   
   return(dd)
 

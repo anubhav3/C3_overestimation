@@ -141,6 +141,605 @@
             "title": "On optimal use of a patchy environment",
             "type": "article-journal",
             "volume": "100"
+        },
+        {
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Jennifer A"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J"
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Neo D"
+                }
+            ],
+            "container-title": "Ecology letters",
+            "id": "dunne2002network",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "558-567",
+            "publisher": "Wiley Online Library",
+            "title": "Network structure and biodiversity loss in food webs: Robustness increases with connectance",
+            "title-short": "Network structure and biodiversity loss in food webs",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.3354/meps273291",
+            "URL": "http://www.int-res.com/abstracts/meps/v273/p291-302/",
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Ja"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Rj"
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Nd"
+                }
+            ],
+            "container-title": "Marine Ecology Progress Series",
+            "id": "dunne2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "291-302",
+            "title": "Network structure and robustness of marine food webs",
+            "type": "article-journal",
+            "volume": "273"
+        },
+        {
+            "DOI": "10.1098/rstb.2008.0219",
+            "URL": "https://royalsocietypublishing.org/doi/10.1098/rstb.2008.0219",
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Jennifer A."
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                }
+            ],
+            "container-title": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+            "id": "dunne2009",
+            "issue": "1524",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009,
+                        6,
+                        27
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1711-1723",
+            "title": "Cascading extinctions and community collapse in model food webs",
+            "type": "article-journal",
+            "volume": "364"
+        },
+        {
+            "DOI": "10.1046/j.1461-0248.2002.00354.x",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1461-0248.2002.00354.x",
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Jennifer A."
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Neo D."
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "dunne2002a",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1461-0248.2002.00354.x",
+            "page": "558-567",
+            "title": "Network structure and biodiversity loss in food webs: robustness increases with connectance",
+            "title-short": "Network structure and biodiversity loss in food webs",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.1073/pnas.0603039103",
+            "URL": "http://www.pnas.org/cgi/doi/10.1073/pnas.0603039103",
+            "author": [
+                {
+                    "family": "Beckerman",
+                    "given": "A. P."
+                },
+                {
+                    "family": "Petchey",
+                    "given": "O. L."
+                },
+                {
+                    "family": "Warren",
+                    "given": "P. H."
+                }
+            ],
+            "container-title": "Proceedings of the National Academy of Sciences",
+            "id": "beckerman2006",
+            "issue": "37",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006,
+                        9,
+                        12
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "13745-13749",
+            "title": "Foraging biology predicts food web complexity",
+            "type": "article-journal",
+            "volume": "103"
+        },
+        {
+            "DOI": "10.1073/pnas.0710672105",
+            "URL": "http://www.pnas.org/cgi/doi/10.1073/pnas.0710672105",
+            "author": [
+                {
+                    "family": "Petchey",
+                    "given": "Owen L."
+                },
+                {
+                    "family": "Beckerman",
+                    "given": "A. P."
+                },
+                {
+                    "family": "Riede",
+                    "given": "J. O."
+                },
+                {
+                    "family": "Warren",
+                    "given": "P. H."
+                }
+            ],
+            "container-title": "Proceedings of the National Academy of Sciences",
+            "id": "petchey2008",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        3,
+                        18
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "tex.ids: petcheySizeForagingFood2008c",
+            "page": "4191-4196",
+            "title": "Size, foraging, and food web structure",
+            "type": "article-journal",
+            "volume": "105"
+        },
+        {
+            "DOI": "10.1098/rspb.2001.1767",
+            "URL": "http://dx.doi.org/10.1098/rspb.2001.1767",
+            "author": [
+                {
+                    "family": "Solé",
+                    "given": "Ricard V."
+                },
+                {
+                    "family": "Montoya",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Proceedings of the Royal Society of London. Series B: Biological Sciences",
+            "id": "solé2001",
+            "issue": "1480",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001,
+                        10,
+                        7
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "2039-2045",
+            "title": "Complexity and fragility in ecological networks",
+            "type": "article-journal",
+            "volume": "268"
+        },
+        {
+            "DOI": "10.1046/j.1461-0248.2002.00354.x",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1461-0248.2002.00354.x",
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Jennifer A."
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Neo D."
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "dunne2002",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "language": "en",
+            "note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1461-0248.2002.00354.x",
+            "page": "558-567",
+            "title": "Network structure and biodiversity loss in food webs: robustness increases with connectance",
+            "title-short": "Network structure and biodiversity loss in food webs",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.1046/j.1461-0248.2002.00354.x",
+            "ISSN": "1461-0248",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1461-0248.2002.00354.x",
+            "abstract": "Food-web structure mediates dramatic effects of biodiversity loss including secondary and “cascading” extinctions. We studied these effects by simulating primary species loss in 16 food webs from terrestrial and aquatic ecosystems and measuring robustness in terms of the secondary extinctions that followed. As observed in other networks, food webs are more robust to random removal of species than to selective removal of species with the most trophic links to other species. More surprisingly, robustness increases with food-web connectance but appears independent of species richness and omnivory. In particular, food webs experience “rivet-like” thresholds past which they display extreme sensitivity to removal of highly connected species. Higher connectance delays the onset of this threshold. Removing species with few trophic connections generally has little effect though there are several striking exceptions. These findings emphasize how the number of species removed affects ecosystems differently depending on the trophic functions of species removed.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2020,
+                        9,
+                        8
+                    ]
+                ]
+            },
+            "annote": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1461-0248.2002.00354.x",
+            "author": [
+                {
+                    "family": "Dunne",
+                    "given": "Jennifer A."
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Neo D."
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "dunneNetworkStructureBiodiversity2002",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "keyword": "Biodiversity,connectance,ecosystem function,food web,network structure,robustness,secondary extinctions,species loss,species richness,topology",
+            "language": "en-US",
+            "page": "558-567",
+            "title": "Network structure and biodiversity loss in food webs: Robustness increases with connectance",
+            "title-short": "Network structure and biodiversity loss in food webs",
+            "type": "article-journal",
+            "volume": "5"
+        },
+        {
+            "DOI": "10.1098/rspb.2001.1767",
+            "ISSN": "0962-8452, 1471-2954",
+            "URL": "https://royalsocietypublishing.org/doi/10.1098/rspb.2001.1767",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        2,
+                        8
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Sol’e",
+                    "given": "Ricard V."
+                },
+                {
+                    "family": "Montoya",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Proceedings of the Royal Society of London. Series B: Biological Sciences",
+            "container-title-short": "Proc. R. Soc. Lond. B",
+            "id": "soleComplexityFragilityEcological2001",
+            "issue": "1480",
+            "issued": {
+                "date-parts": [
+                    [
+                        2001,
+                        10,
+                        7
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "2039-2045",
+            "title": "Complexity and fragility in ecological networks",
+            "type": "article-journal",
+            "volume": "268"
+        },
+        {
+            "DOI": "10.1007/s12080-008-0013-5",
+            "ISSN": "1874-1738, 1874-1746",
+            "URL": "http://link.springer.com/10.1007/s12080-008-0013-5",
+            "abstract": "Four models of network structure are combined with models of bioenergetic dynamics to study the role of food web topology and nonlinear dynamics on species coexistence in complex ecological networks. Network models range from the highly structured niche model to loosely constrained energetically feasible random networks. Bioenergetic models differ in how they represent primary production, functional responses, and consumption by generalists. Network structure weakly influenced the ability of species to coexist. Species persistence is strongly affected by functional responses and generalists’ consumption rates but weakly affected by models and amounts of primary production. Despite these generalities, specific mechanisms that determine persistence under one dynamical regime, such as top-down control by consumers, may play an insignificant role under different dynamical conditions. Future research is needed to strengthen the weak empirical basis for various functional forms and parameter values that strongly influence whether species can coexist in complex food webs.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        2,
+                        19
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                }
+            ],
+            "container-title": "Theoretical Ecology",
+            "container-title-short": "Theor Ecol",
+            "id": "williamsEffectsNetworkDynamical2008",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008,
+                        9
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "141-151",
+            "title": "Effects of network and dynamical model structure on species persistence in large model food webs",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "DOI": "10.1111/ele.13966",
+            "ISSN": "1461-0248",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/ele.13966",
+            "abstract": "We have very limited knowledge of how species interact in most communities and ecosystems despite trophic relationships being fundamental for linking biodiversity to ecosystem functioning. A promising approach to fill this gap is to predict interactions based on functional traits, but many questions remain about how well we can predict interactions for different taxa, ecosystems and amounts of input data. Here, we built a new traits-based model of trophic interactions for European vertebrates and found that even models calibrated with 0.1% of the interactions (100 out of 71 k) estimated the full European vertebrate food web reasonably well. However, predators were easier to predict than prey, especially for some clades (e.g. fowl and storks) and local food web connectance was consistently overestimated. Our results demonstrate the ability to rapidly generate food webs when empirical data are lacking—an important step towards a more complete and spatially explicit description of food webs.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2022,
+                        1,
+                        23
+                    ]
+                ]
+            },
+            "annote": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/ele.13966",
+            "author": [
+                {
+                    "family": "Caron",
+                    "given": "Dominique"
+                },
+                {
+                    "family": "Maiorano",
+                    "given": "Luigi"
+                },
+                {
+                    "family": "Thuiller",
+                    "given": "Wilfried"
+                },
+                {
+                    "family": "Pollock",
+                    "given": "Laura J."
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "caronAddressingEltonianShortfall",
+            "issue": "n/a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "keyword": "ecological networks,ecological predictions,food web,model transferability,terrestrial vertebrates,trait matching,trophic interactions",
+            "language": "en-US",
+            "title": "Addressing the Eltonian shortfall with trait-based interaction models",
+            "type": "article-journal",
+            "volume": "n/a"
+        },
+        {
+            "DOI": "10.1111/j.1461-0248.2006.00978.x",
+            "ISSN": "1461-0248",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1461-0248.2006.00978.x",
+            "abstract": "Classic local stability theory predicts that complex ecological networks are unstable and are unlikely to persist despite empiricists’ abundant documentation of such complexity in nature. This contradiction has puzzled biologists for decades. While some have explored how stability may be achieved in small modules of a few interacting species, rigorous demonstrations of how large complex and ecologically realistic networks dynamically persist remain scarce and inadequately understood. Here, we help fill this void by combining structural models of complex food webs with nonlinear bioenergetic models of population dynamics parameterized by biological rates that are allometrically scaled to populations’ average body masses. Increasing predator–prey body mass ratios increase population persistence up to a saturation level that is reached by invertebrate and ectotherm vertebrate predators when being 10 or 100 times larger than their prey respectively. These values are corroborated by empirical predator–prey body mass ratios from a global data base. Moreover, negative effects of diversity (i.e. species richness) on stability (i.e. population persistence) become neutral or positive relationships at these empirical ratios. These results demonstrate that the predator–prey body mass ratios found in nature may be key to enabling persistence of populations in complex food webs and stabilizing the diversity of natural ecosystems.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2021,
+                        6,
+                        23
+                    ]
+                ]
+            },
+            "annote": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1461-0248.2006.00978.x",
+            "author": [
+                {
+                    "family": "Brose",
+                    "given": "Ulrich"
+                },
+                {
+                    "family": "Williams",
+                    "given": "Richard J."
+                },
+                {
+                    "family": "Martinez",
+                    "given": "Neo D."
+                }
+            ],
+            "container-title": "Ecology Letters",
+            "id": "broseAllometricScalingEnhances2006",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "keyword": "Diversity–stability,interaction strength,metabolic theory,networks,population dynamics,predation,predator–prey,trophic interactions",
+            "language": "en-US",
+            "page": "1228-1236",
+            "title": "Allometric scaling enhances stability in complex food webs",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1038/238413a0",
+            "ISSN": "1476-4687",
+            "URL": "https://www.nature.com/articles/238413a0",
+            "abstract": "Gardner and Ashby1 have suggested that large complex systems which are assembled (connected) at random may be expected to be stable up to a certain critical level of connectance, and then, as this increases, to suddenly become unstable. Their conclusions were based on the trend of computer studies of systems with 4, 7 and 10 variables.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2019,
+                        4,
+                        12
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "May",
+                    "given": "Robert M."
+                }
+            ],
+            "container-title": "Nature",
+            "id": "mayWillLargeComplex1972",
+            "issue": "5364",
+            "issued": {
+                "date-parts": [
+                    [
+                        1972,
+                        8
+                    ]
+                ]
+            },
+            "language": "en-US",
+            "page": "413",
+            "title": "Will a Large Complex System be Stable?",
+            "type": "article-journal",
+            "volume": "238"
+        },
+        {
+            "URL": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12103",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2020,
+                        4,
+                        20
+                    ]
+                ]
+            },
+            "id": "InferringFoodWeb",
+            "title": "Inferring food web structure from predator–prey body size relationships - Gravel - 2013 - Methods in Ecology and Evolution - Wiley Online Library",
+            "type": "webpage"
+        },
+        {
+            "DOI": "10.1111/2041-210X.12103",
+            "ISSN": "2041-210X",
+            "URL": "https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12103",
+            "abstract": "Current global changes make it important to be able to predict which interactions will occur in the emerging ecosystems. Most of the current methods to infer the existence of interactions between two species require a good knowledge of their behaviour or a direct observation of interactions. In this paper, we overcome these limitations by developing a method, inspired from the niche model of food web structure, using the statistical relationship between predator and prey body size to infer the matrix of potential interactions among a pool of species. The novelty of our approach is to infer, for any species of a given species pool, the three species-specific parameters of the niche model. The method applies to both local and metaweb scales. It allows one to evaluate the feeding interactions of a new species entering the community. We find that this method gives robust predictions of the structure of food webs and that its efficiency is increased when the strength of the body–size relationship between predators and preys increases. We finally illustrate the potential of the method to infer the metaweb structure of pelagic fishes of the Mediterranean sea under different global change scenarios.",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2020,
+                        11,
+                        25
+                    ]
+                ]
+            },
+            "annote": "_eprint: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12103",
+            "author": [
+                {
+                    "family": "Gravel",
+                    "given": "Dominique"
+                },
+                {
+                    "family": "Poisot",
+                    "given": "Timoth’ee"
+                },
+                {
+                    "family": "Albouy",
+                    "given": "Camille"
+                },
+                {
+                    "family": "Velez",
+                    "given": "Laure"
+                },
+                {
+                    "family": "Mouillot",
+                    "given": "David"
+                }
+            ],
+            "container-title": "Methods in Ecology and Evolution",
+            "id": "gravelInferringFoodWeb2013a",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "keyword": "Body size,Food web,Metaweb,Niche model",
+            "language": "en-US",
+            "page": "1083-1090",
+            "title": "Inferring food web structure from predator–prey body size relationships",
+            "type": "article-journal",
+            "volume": "4"
         }
     ],
     "project_biblios": []

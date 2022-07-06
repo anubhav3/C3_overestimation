@@ -32,7 +32,7 @@ random_ext <- function(net, nsim){
       }
       
       k <- k + 1
-      print(k)
+      # print(k)
     }
     dd <- rbind(dd, dd_temp)
   }

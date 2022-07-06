@@ -4,9 +4,9 @@
 sim_single_ext <- function(net, node){
   
   indeg <- rowSums(net)
-  print(length((indeg)))
+  # print(length((indeg)))
   outdeg <- colSums(net)
-  print(length((outdeg)))
+  # print(length((outdeg)))
   totdeg <- indeg + outdeg
   
 
