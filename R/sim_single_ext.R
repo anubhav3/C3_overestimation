@@ -24,6 +24,7 @@ sim_single_ext <- function(net, node){
   
   node_to_sec_ext <- which(outdeg[as.logical(node_pred)] == 1)
   
+  
   if(length(node_to_sec_ext) != 0){
     new_net_2 <- new_net[!rownames(new_net) %in% names(node_to_sec_ext), !colnames(new_net) %in% names(node_to_sec_ext)]
     if(length(new_net_2) == 1){
@@ -32,7 +33,7 @@ sim_single_ext <- function(net, node){
       rownames(new_net_2) <- lost_node
       colnames(new_net_2) <- lost_node
     }
-  } else {
+  } else { ## If there are no predator of the primary node (the one which is removed)
     new_net_2 <- new_net
   }
   

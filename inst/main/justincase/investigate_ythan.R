@@ -13,3 +13,9 @@ Plot.matrix(ythan_ABC)
 conn_emp <- sum(ythan_emp)/(dim(ythan_emp)[1]^2)
 conn_2008 <- sum(ythan_2008)/(dim(ythan_2008)[1]^2)
 
+
+ythan_ADBM_ABC_comm <- mat.to.comm(pred.mat = ythan_ABC, fw_title = "Ythan")
+PlotWebByLevel(community = ythan_ADBM_ABC_comm)
+
+ythan_emp_comm <- mat.to.comm(pred.mat = ythan_emp, fw_title = "Ythan Observed")
+PlotWebByLevel(community = ythan_emp_comm)

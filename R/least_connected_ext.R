@@ -4,6 +4,13 @@
 least_connected_ext <- function(net){
   
   dd <- data.frame(node = character(), acc_pri_ext = integer(), n_sec_ext = integer(), acc_sec_ext = integer())
+  basal_species <- basal_species_fun(net)
+  
+  ## Removing isolated nodes
+  isolated_nodes <- isolated_nodes_fun(net = net)
+  not_isolated_nodes <- setdiff(x = colnames(net), y = isolated_nodes)
+  net <- net[not_isolated_nodes, not_isolated_nodes]
+  
   new_net <- net
   k <- 1
   ext_list <- list()
@@ -17,7 +24,7 @@ least_connected_ext <- function(net){
     min_totdeg <- which.min(totdeg)
     node <- names(min_totdeg)
     
-    ext_list[[k]] <- sim_single_ext(net = new_net, node = node)
+    ext_list[[k]] <- sim_single_ext_v2(net = new_net, node = node, basal_species = basal_species)
     new_net <- ext_list[[k]]$net
     
     if(k != 1){

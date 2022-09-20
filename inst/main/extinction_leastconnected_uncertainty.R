@@ -11,10 +11,10 @@ library(ggplot2)
 sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
 sourceDirectory("R", modifiedOnly=FALSE)
 
-# For removing least connected nodes
+# For removing most connected nodes
 dd_lc <- data.frame(n_ext = double(),
                     acc_sec_ext = integer(),
-                    nsim = integer(),
+                    nsim_fw = integer(),
                     type = character(),
                     fw_name = character(),
                     S = integer(),
@@ -40,12 +40,12 @@ for(i in fw_ind){
   S <- dim(real_pred_mat)[1]
   L_real <- sum(real_pred_mat)
   real_conn <- sum(real_pred_mat)/(dim(real_pred_mat)[1]^2)
-  real_ext_mc <- least_connected_ext(net = real_pred_mat)
+  real_ext_lc <- least_connected_ext(net = real_pred_mat)
   
   dd_lc <- rbind(dd_lc, 
-                 data.frame(n_ext = real_ext_mc$acc_pri_ext,
-                            acc_sec_ext = real_ext_mc$acc_sec_ext,
-                            nsim = 1,
+                 data.frame(n_ext = real_ext_lc$acc_pri_ext,
+                            acc_sec_ext = real_ext_lc$acc_sec_ext,
+                            nsim_fw = 1,
                             type = "Empirical",
                             fw_name = fw_name,
                             S = S,
@@ -57,18 +57,18 @@ for(i in fw_ind){
     
     L_ADBM_ABC <- sum(ADBM_ABC_pred_mat)
     ADBM_ABC_conn <- sum(ADBM_ABC_pred_mat)/(dim(ADBM_ABC_pred_mat)[1]^2)
-    ADBM_ABC_ext_mc <- least_connected_ext(net = ADBM_ABC_pred_mat)
+    ADBM_ABC_ext_lc <- least_connected_ext(net = ADBM_ABC_pred_mat)
     
     dd_lc <- rbind(dd_lc,
-                   data.frame(n_ext = ADBM_ABC_ext_mc$acc_pri_ext,
-                              acc_sec_ext = ADBM_ABC_ext_mc$acc_sec_ext,
-                              nsim = j,
-                              type = "ADBM",
+                   data.frame(n_ext = ADBM_ABC_ext_lc$acc_pri_ext,
+                              acc_sec_ext = ADBM_ABC_ext_lc$acc_sec_ext,
+                              nsim_fw = j,
+                              type = "ADBM_ABC",
                               fw_name = fw_name,
                               S = S,
                               L = L_ADBM_ABC))
   }
-  # print(fw_name)
+  print(fw_name)
 }
 
-saveRDS(object = dd_lc, file = "results/least_connnected_uncertainty.RDS")
+# saveRDS(object = dd_lc, file = "results/least_connnected_uncertainty.RDS")

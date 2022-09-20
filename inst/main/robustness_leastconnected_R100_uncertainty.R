@@ -11,7 +11,7 @@ library(dplyr)
 sourceDirectory("../C1_method/R", modifiedOnly=FALSE)
 sourceDirectory("R", modifiedOnly=FALSE)
 
-dd_lc <- readRDS("results/least_connnected_uncertainty.RDS")
+dd_lc <- readRDS("results/least_connnected_uncertainty_new.RDS")
 
 fw_list <- unique(dd_lc$fw_name)
 rob_all <- data.frame(robustness = double(), fw_name = character(), type = character(), connectance = double(),

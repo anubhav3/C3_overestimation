@@ -30,7 +30,7 @@ keywords:
   - uncertainty
 header-includes:
   - \usepackage{lineno}
-  - \linenumbers
+  # - \linenumbers
   - \usepackage {amsmath}
   - \setlength\parindent{24pt}
   - \usepackage{setspace}\doublespacing

@@ -14,7 +14,7 @@ sourceDirectory("R", modifiedOnly=FALSE)
 # For removing most connected nodes
 dd_mc <- data.frame(n_ext = double(),
                     acc_sec_ext = integer(),
-                    nsim = integer(),
+                    nsim_fw = integer(),
                     type = character(),
                     fw_name = character(),
                     S = integer(),
@@ -45,7 +45,7 @@ for(i in fw_ind){
   dd_mc <- rbind(dd_mc, 
                  data.frame(n_ext = real_ext_mc$acc_pri_ext,
                             acc_sec_ext = real_ext_mc$acc_sec_ext,
-                            nsim = 1,
+                            nsim_fw = 1,
                             type = "Empirical",
                             fw_name = fw_name,
                             S = S,
@@ -62,13 +62,13 @@ for(i in fw_ind){
     dd_mc <- rbind(dd_mc,
                    data.frame(n_ext = ADBM_ABC_ext_mc$acc_pri_ext,
                               acc_sec_ext = ADBM_ABC_ext_mc$acc_sec_ext,
-                              nsim = j,
-                              type = "ADBM",
+                              nsim_fw = j,
+                              type = "ADBM_ABC",
                               fw_name = fw_name,
                               S = S,
                               L = L_ADBM_ABC))
   }
-  # print(fw_name)
+  print(fw_name)
 }
 
 # saveRDS(object = dd_mc, file = "results/most_connnected_uncertainty.RDS")

@@ -57,7 +57,7 @@ for(i in fw_ind){
                             L = L_real),
                  data.frame(n_ext = ADBM_ABC_ext_mc$acc_pri_ext,
                             acc_sec_ext = ADBM_ABC_ext_mc$acc_sec_ext,
-                            type = "ADBM_ABC",
+                            type = "ADBM",
                             fw_name = fw_name,
                             S = S,
                             L = L_ADBM_ABC),
@@ -65,7 +65,7 @@ for(i in fw_ind){
   print(fw_name)
 }
 
-# saveRDS(object = dd_lc, file = "results/least_connected.RDS")
+# saveRDS(object = dd_lc, file = "results/least_connected_maxTSS.RDS")
 
 
 
