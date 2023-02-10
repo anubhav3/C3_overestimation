@@ -21,9 +21,11 @@ plot_max_tl_ADBM_vs_emp <- ggplot(max_tl_df) +
   xlim(c(0, 10)) +
   ylim(c(0, 10)) +
   scale_color_brewer(palette = "Paired", labels = fw_labs, name = "Food web") +
-  geom_abline(slope = 1, intercept = 0) +
+  geom_abline(slope = 1, intercept = 0, linetype = 2) +
   xlab("Maximum trophic level in observed food webs") +
   ylab("Maximum trophic level in ADBM predicted food webs") +
   theme_classic()
+
+# saveRDS(object = plot_max_tl_ADBM_vs_emp, file = "results/plot_max_tl_ADBM_vs_emp.RDS")
 
 # ggsave(plot = plot_max_tl_ADBM_vs_emp, filename = "results/plot_max_tl_ADBM_vs_emp.png", width = 8, height = 5)

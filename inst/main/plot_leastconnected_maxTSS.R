@@ -28,7 +28,9 @@ plot_dd_lc_mod <- ggplot(dd_lc_mod) +
   scale_color_manual(name = "Food web type", labels = c("ADBM" = "ADBM food web with maximum TSS", "Empirical" = "Observed food web"), 
                      values = c("ADBM" = "red", "Empirical" = "blue")) +
   theme(legend.position="bottom", legend.text = element_text(size = 15),
-        legend.title = element_text(size = 15))
+        legend.title = element_text(size = 15)) +
+  theme(text = element_text(size = 16)) +
+  scale_x_continuous(breaks = c(0, 0.25, 0.5, 0.75, 1), labels = c(0, 0.25, 0.5, 0.75, 1))
 
 
 # ggsave(plot = plot_dd_lc_mod, filename = "results/plot_leastconnected_maxTSS.png", width = 13, height = 6)

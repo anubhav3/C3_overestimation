@@ -70,7 +70,7 @@ rob_both_median <- rob_both %>%
 #### Graph
 plot_R50_ra <- rob_both %>%
   ggplot() +
-  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 1, width = 0.0019, outlier.shape = 1,
+  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 0.5, width = 0.01, outlier.shape = 1,
                outlier.alpha = 0.5, outlier.size = 0.3) +
   geom_abline(slope = 1, intercept = 0, linetype = 3) +
   xlim(c(0.0, 0.51)) +
@@ -86,7 +86,8 @@ plot_R50_ra <- rob_both %>%
   scale_color_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_shape_manual(name  = "Summary statistics", labels = c("Median"), values = c(18)) +
   ggtitle("(b) Random") +
-  theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "right", plot.title = element_text(hjust = 0.5)) +
+  theme(text = element_text(size = 15))
 
 
 ##### Most Connected extinction ####
@@ -134,7 +135,7 @@ rob_both_mc_median <- rob_both_mc %>%
 #### Graph
 plot_R50_mc <- rob_both_mc %>%
   ggplot() +
-  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 1, width = 0.0019, outlier.shape = 1,
+  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 0.5, width = 0.01, outlier.shape = 1,
                outlier.alpha = 0.5, outlier.size = 0.3) +
   geom_abline(slope = 1, intercept = 0, linetype = 3) +
   xlim(c(0.0, 0.51)) +
@@ -150,7 +151,8 @@ plot_R50_mc <- rob_both_mc %>%
   scale_color_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_shape_manual(name  = "Summary statistics", labels = c("Median"), values = c(18)) +
   ggtitle("(a) Most connected") +
-  theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "right", plot.title = element_text(hjust = 0.5)) +
+  theme(text = element_text(size = 15))
 
 
 
@@ -201,7 +203,7 @@ rob_both_lc_median <- rob_both_lc %>%
 #### Graph
 plot_R50_lc <- rob_both_lc %>%
   ggplot() +
-  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 1, width = 0.0019, outlier.shape = 1,
+  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 0.5, width = 0.01, outlier.shape = 1,
                outlier.alpha = 0.5, outlier.size = 0.3) +
   # facet_wrap(~fw_name) +
   geom_abline(slope = 1, intercept = 0, linetype = 3) +
@@ -219,7 +221,8 @@ plot_R50_lc <- rob_both_lc %>%
   scale_color_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_shape_manual(name  = "Summary statistics", labels = c("Median"), values = c(18)) +
   ggtitle("(c) Least connected") +
-  theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "right", plot.title = element_text(hjust = 0.5)) +
+  theme(text = element_text(size = 15))
 
 
 ###  Merging all the above plots
@@ -236,7 +239,7 @@ plot_R50_all <- ggarrange(plot_R50_mc, plot_R50_ra, plot_R50_lc, nrow = 1, ncol 
 #### Least connected faceted ####
 plot_R50_lc_facet <- rob_both_lc %>%
   ggplot() +
-  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 1, width = 0.019, outlier.shape = 1,
+  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name), alpha = 1, width = 0.019, outlier.shape = 1,
                outlier.alpha = 0.5, outlier.size = 0.3) +
   facet_wrap(~fw_name, labeller = labeller(fw_name = fw_labs_facet)) +
   geom_abline(slope = 1, intercept = 0, linetype = 3) +
@@ -249,19 +252,20 @@ plot_R50_lc_facet <- rob_both_lc %>%
   xlab(TeX("Robustness ($R_{50}$) of observed food webs")) +
   # ylab(TeX("Robustness ($R_{50}$) of ADBM food webs")) +
   # xlab("") +
-  ylab("") +
+  ylab(TeX("Robustness ($R_{50}$) of ADBM food webs")) +
   scale_fill_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_color_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_shape_manual(name  = "Summary statistics", labels = c("Median"), values = c(18)) +
   ggtitle("Least connected") +
-  theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "right", plot.title = element_text(hjust = 0.5)) +
+  theme(text = element_text(size = 15))
 
 
 #### Random faceted ####
 
 plot_R50_ra_facet <- rob_both %>%
   ggplot() +
-  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name, fill = fw_name), alpha = 1, width = 0.019, outlier.shape = 1,
+  geom_boxplot(aes(x = robustness_emp, y = robustness_ADBM, color = fw_name), alpha = 1, width = 0.019, outlier.shape = 1,
                outlier.alpha = 0.5, outlier.size = 0.3) +
   geom_abline(slope = 1, intercept = 0, linetype = 3) +
   facet_wrap(~fw_name, labeller = labeller(fw_name = fw_labs_facet)) +
@@ -278,13 +282,14 @@ plot_R50_ra_facet <- rob_both %>%
   scale_color_brewer(type = "qual", palette = "Paired", labels = fw_labs, name = "Food web") +
   scale_shape_manual(name  = "Summary statistics", labels = c("Median"), values = c(18)) +
   ggtitle("Random") +
-  theme(legend.position = "right", plot.title = element_text(hjust = 0.5))
+  theme(legend.position = "right", plot.title = element_text(hjust = 0.5)) +
+  theme(text = element_text(size = 15))
 
 
 
 #### Combining faceted random and least connected ###
 
-plot_R50_ra_lc_facet <- ggarrange(plot_R50_ra_facet, plot_R50_lc_facet, nrow = 1, ncol = 2, common.legend = TRUE,
+plot_R50_ra_lc_facet <- ggarrange(plot_R50_ra_facet, plot_R50_lc_facet, nrow = 2, ncol = 1, common.legend = TRUE,
                           legend = "bottom")
 
-# ggsave(plot_R50_ra_lc_facet, filename = "results/plot_R50_ADBM_vs_obs_ra_lc_facet.png", width = 15, height = 8, dpi = 500)
+# ggsave(plot_R50_ra_lc_facet, filename = "results/plot_R50_ADBM_vs_obs_ra_lc_facet.png", width = 13, height = 15, dpi = 250)

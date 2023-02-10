@@ -9,11 +9,12 @@ dd_rand_raw <- readRDS("results/random_raw_uncertainty_maxTSS.RDS")
 dd_rand_mod <- dd_rand_raw %>%
   mutate(acc_pri_ext_by_S = n_ext/S, acc_sec_ext_by_S = acc_sec_ext/S)
 
-fw_labs <- c("Benguela Pelagic" = "Benguela Pelagic", "Broadstone Stream" = "Broadstone Stream \n (taxonomic aggregation)",
-             "Broom" = "Broom", "Capinteria" = "Capinteria", "Caricaie Lakes" = "Caricaie Lakes",
-             "Grasslands" = "Grasslands", "Mill Stream" = "Mill Stream",
-             "Skipwith Pond" = "Skipwith Pond", "Small Reef" = "Small Reef", "Tuesday Lake" = "Tuesday Lake",
-             "Ythan" = "Ythan", "Broadstone Stream size_agg" = "Broadstone Stream \n (size aggregation)")
+fw_labs <- c("Benguela Pelagic" = "(a) Benguela Pelagic", "Broadstone Stream" = "(b) Broadstone Stream \n(taxonomic aggregation)",
+             "Broadstone Stream size_agg" = "(c) Broadstone Stream \n(size aggregation)",
+             "Broom" = "(d) Broom", "Capinteria" = "(e) Capinteria", "Caricaie Lakes" = "(f) Caricaie Lakes",
+             "Grasslands" = "(g) Grasslands", "Mill Stream" = "(h) Mill Stream",
+             "Skipwith Pond" = "(i) Skipwith Pond", "Small Reef" = "(j) Small Reef", "Tuesday Lake" = "(k) Tuesday Lake",
+             "Ythan" = "(l) Ythan")
 
 plot_ra_ext_lines <- dd_rand_mod %>%
   filter(nsim_rand %in% c(36:40)) %>%
@@ -31,6 +32,8 @@ plot_ra_ext_lines <- dd_rand_mod %>%
     scale_color_manual(name = "Food web type", labels = c("ADBM_ABC" = "ADBM food web with maximum TSS", "Empirical" = "Observed food web"), 
                      values = c("ADBM_ABC" = "red", "Empirical" = "blue")) +
     theme(legend.position="bottom", legend.text = element_text(size = 15),
-          legend.title = element_text(size = 15))
+          legend.title = element_text(size = 15)) +
+    theme(text = element_text(size = 16)) +
+    scale_x_continuous(breaks = c(0, 0.25, 0.5, 0.75, 1), labels = c(0, 0.25, 0.5, 0.75, 1))
 
 # ggsave(plot = plot_ra_ext_lines, filename = "results//plot_ra_extlines_maxTSS.png", width = 13, height = 6)

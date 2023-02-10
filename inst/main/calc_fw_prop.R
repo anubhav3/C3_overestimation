@@ -47,7 +47,7 @@ max_tl_emp_fun <- function(foodweb){
   metadata <- read_excel("~/Google Drive/GitHub/C1_method_v2/data/parameter_values.xlsx")
   fw_tol_loc <- metadata$dist_rej[metadata$foodweb == fw]
   
-  for(nsim_loc in 1:10){
+  for(nsim_loc in 1:1){
     pred_mat <- ADBM_ABC_fw_all(fw_name = fw, fw_tol = fw_tol_loc, nsim = nsim_loc)
     
     pred_mat_emp <- pred_mat$real_pred_mat
