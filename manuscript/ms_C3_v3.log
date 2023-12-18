@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.10)  26 MAY 2023 09:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.10)  18 DEC 2023 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -758,7 +758,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.367 \end{landscape}
+l.364 \end{landscape}
                      ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -774,32 +774,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <../results/plot_R50_ADBM_vs_obs.png, id=138, 7528.125pt x 3011.25pt>
 File: ../results/plot_R50_ADBM_vs_obs.png Graphic file (type png)
 <use ../results/plot_R50_ADBM_vs_obs.png>
-Package pdftex.def Info: ../results/plot_R50_ADBM_vs_obs.png  used on input line 498.
+Package pdftex.def Info: ../results/plot_R50_ADBM_vs_obs.png  used on input line 493.
 (pdftex.def)             Requested size: 451.68915pt x 180.6672pt.
 
-Overfull \hbox (21.68452pt too wide) in paragraph at lines 498--499
- [][] 
- []
-
-[9]
-<../results/plot_R50_slope.png, id=149, 4516.875pt x 1806.75pt>
-File: ../results/plot_R50_slope.png Graphic file (type png)
-<use ../results/plot_R50_slope.png>
-Package pdftex.def Info: ../results/plot_R50_slope.png  used on input line 522.
-(pdftex.def)             Requested size: 451.68915pt x 180.658pt.
-
-Overfull \hbox (21.68452pt too wide) in paragraph at lines 522--523
+Overfull \hbox (21.68452pt too wide) in paragraph at lines 493--494
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+[9]
+<../results/plot_R50_slope.png, id=149, 4516.875pt x 1806.75pt>
+File: ../results/plot_R50_slope.png Graphic file (type png)
+<use ../results/plot_R50_slope.png>
+Package pdftex.def Info: ../results/plot_R50_slope.png  used on input line 517.
+(pdftex.def)             Requested size: 451.68915pt x 180.658pt.
+
+Overfull \hbox (21.68452pt too wide) in paragraph at lines 517--518
+ [][] 
+ []
+
 [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.546 
+l.551 
        <../results/plot_R50_ADBM_vs_obs.png>]
 Underfull \vbox (badness 7047) has occurred while \output is active []
 
@@ -807,7 +807,7 @@ Underfull \vbox (badness 7047) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.595 
+l.590 
        <../results/plot_R50_slope.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -834,14 +834,14 @@ Package rerunfilecheck Info: File `ms_C3_v3.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  14988 strings out of 477989
- 244924 string characters out of 5838545
+ 244926 string characters out of 5838545
  1870346 words of memory out of 5000000
  34595 multiletter control sequences out of 15000+600000
  584095 words of font info for 166 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,13n,76p,1005b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,76p,1005b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/anubhav/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/anubhav/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/anubhav/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/anubhav/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></Users/anubhav/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ms_C3_v3.pdf (18 pages, 1256715 bytes).
+Output written on ms_C3_v3.pdf (18 pages, 1257088 bytes).
 PDF statistics:
  393 PDF objects out of 1000 (max. 8388607)
  333 compressed objects within 4 object streams
